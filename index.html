@@ -1,671 +1,640 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aakash Shah — Software Engineer</title>
+<meta name="description" content="Aakash Shah — Software Engineer 2 at Microsoft. 8+ years building resilient, large-scale backend services and full-stack applications across fintech and gaming/commerce." />
+<meta name="author" content="Aakash Shah" />
 
-<title>Aakash Shah</title>
+<!-- Open Graph -->
+<meta property="og:title" content="Aakash Shah — Software Engineer" />
+<meta property="og:description" content="Software Engineer 2 at Microsoft. 8+ years across fintech and commerce, building resilient, large-scale distributed systems." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aakashshah94.github.io/" />
 
-<!-- meta-tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Aakash Shah" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //meta-tags -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Custom-Files -->
-<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="css/swipebox.css"> <!-- For-Gallery-Swipebox-CSS -->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- //Custom-Files -->
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-alt: #111826;
+    --card: #161d2b;
+    --card-hover: #1c2536;
+    --border: #26304099;
+    --text: #e6edf3;
+    --muted: #9aa7b8;
+    --accent: #4f9cf9;
+    --accent-2: #7c5cff;
+    --accent-grad: linear-gradient(120deg, #4f9cf9, #7c5cff);
+    --shadow: 0 10px 30px -12px rgba(0,0,0,.6);
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: var(--accent); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: #8ab9ff; }
+  h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
+  section { padding: 90px 0; }
+  .container { width: min(1080px, 92%); margin: 0 auto; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .accent-text { background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-<!-- Web-Fonts -->
-<link href="//fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
-<!-- //Web-Fonts -->
+  /* Section heading */
+  .section-head { margin-bottom: 48px; }
+  .section-head .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: .8rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .section-head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-top: 8px; }
+  .section-head p { color: var(--muted); margin-top: 12px; max-width: 640px; }
 
+  /* Navbar */
+  header.nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13,17,23,.72);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease, background .3s ease;
+  }
+  header.nav.scrolled { border-color: var(--border); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .brand { font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: var(--muted); font-size: .92rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+
+  /* Hero */
+  .hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 66px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 400px at 75% 20%, rgba(124,92,255,.16), transparent 70%),
+      radial-gradient(700px 500px at 10% 80%, rgba(79,156,249,.14), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+  .hero .greeting { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: .95rem; margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 800; letter-spacing: -.03em; }
+  .hero .role { font-size: clamp(1.3rem, 4vw, 2rem); color: var(--muted); font-weight: 600; margin-top: 6px; }
+  .hero .tagline { margin-top: 24px; font-size: 1.1rem; color: var(--muted); max-width: 640px; }
+  .hero-cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: .95rem;
+    border: 1px solid var(--border); transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary { background: var(--accent-grad); color: #fff; border: none; }
+  .btn-primary:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px -10px rgba(79,156,249,.6); }
+  .btn-ghost { color: var(--text); background: var(--card); }
+  .btn-ghost:hover { color: var(--text); background: var(--card-hover); transform: translateY(-2px); }
+  .socials { display: flex; gap: 18px; margin-top: 34px; }
+  .socials a { color: var(--muted); font-size: 1.35rem; }
+  .socials a:hover { color: var(--accent); transform: translateY(-2px); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: start; }
+  .about-grid p { color: var(--muted); margin-bottom: 16px; }
+  .about-grid strong { color: var(--text); }
+  .facts { display: grid; gap: 16px; }
+  .fact {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; text-align: center;
+  }
+  .fact .num { font-size: 1.9rem; font-weight: 800; }
+  .fact .lbl { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: transform .2s ease, border-color .2s ease; }
+  .skill-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .skill-card h4 { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 1.05rem; }
+  .skill-card h4 i { color: var(--accent); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: .78rem;
+    background: #1d2636; color: #b7c4d6; padding: 5px 11px; border-radius: 7px; border: 1px solid var(--border);
+  }
+
+  /* Experience timeline */
+  .timeline { position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 20px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--accent), var(--accent-2)); opacity: .5; }
+  .tl-item { position: relative; padding-left: 62px; padding-bottom: 44px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: 11px; top: 4px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--accent); box-shadow: 0 0 0 4px rgba(79,156,249,.12);
+  }
+  .tl-item .period { font-family: 'JetBrains Mono', monospace; font-size: .82rem; color: var(--accent); }
+  .tl-item h3 { font-size: 1.25rem; margin-top: 4px; }
+  .tl-item .company { color: var(--text); font-weight: 600; }
+  .tl-item .meta { color: var(--muted); font-size: .9rem; margin-bottom: 14px; }
+  .tl-item ul { list-style: none; display: grid; gap: 10px; }
+  .tl-item ul li { position: relative; padding-left: 22px; color: var(--muted); }
+  .tl-item ul li::before { content: "\f0da"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: 1px; color: var(--accent); font-size: .8rem; }
+  .tl-item ul li strong { color: var(--text); }
+  .stack-line { margin-top: 14px; font-size: .82rem; color: #7d8aa0; font-family: 'JetBrains Mono', monospace; }
+
+  /* Highlights */
+  .highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .hl-card { background: linear-gradient(160deg, var(--card), var(--bg-alt)); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: transform .2s ease; }
+  .hl-card:hover { transform: translateY(-4px); }
+  .hl-card .icon { width: 46px; height: 46px; border-radius: 11px; background: rgba(79,156,249,.12); display: grid; place-items: center; color: var(--accent); font-size: 1.2rem; margin-bottom: 16px; }
+  .hl-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+  .hl-card p { color: var(--muted); font-size: .93rem; }
+
+  /* Projects */
+  .proj-tabs { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+  .proj-tab {
+    background: var(--card); border: 1px solid var(--border); color: var(--muted);
+    padding: 8px 18px; border-radius: 999px; font-size: .88rem; font-weight: 500; cursor: pointer; transition: all .2s ease;
+  }
+  .proj-tab.active { background: var(--accent-grad); color: #fff; border-color: transparent; }
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .proj-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px; display: flex; flex-direction: column; transition: transform .2s ease, border-color .2s ease;
+  }
+  .proj-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .proj-card .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .proj-card .top .folder { color: var(--accent); font-size: 1.5rem; }
+  .proj-card .badge { font-family: 'JetBrains Mono', monospace; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 6px; }
+  .badge-private { background: rgba(124,92,255,.15); color: #b3a4ff; }
+  .badge-oss { background: rgba(63,185,80,.15); color: #6fdc82; }
+  .proj-card h4 { font-size: 1.12rem; margin-bottom: 8px; }
+  .proj-card p { color: var(--muted); font-size: .9rem; flex-grow: 1; }
+  .proj-card .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .proj-card .stack span { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: #8b98ac; }
+  .proj-card .links { margin-top: 16px; display: flex; gap: 16px; font-size: .85rem; }
+  .proj-card .links a { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+  .edu-card .period { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--accent); }
+  .edu-card h4 { margin: 8px 0; font-size: 1.1rem; }
+  .edu-card .school { color: var(--muted); }
+  .edu-card .gpa { margin-top: 10px; color: var(--text); font-weight: 600; font-size: .9rem; }
+
+  /* Contact */
+  .contact { text-align: center; }
+  .contact .section-head { margin-bottom: 28px; }
+  .contact .section-head p { margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 30px; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: var(--muted); font-size: .88rem; }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 820px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .nav-links {
+      position: fixed; inset: 66px 0 auto 0; flex-direction: column; gap: 0;
+      background: var(--bg-alt); border-bottom: 1px solid var(--border);
+      max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    }
+    .nav-links.open { max-height: 340px; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 15px 4%; border-top: 1px solid var(--border); }
+    .nav-toggle { display: block; }
+  }
+</style>
 </head>
 <body>
 
-<div class="w3-content w3-display-container">
-
-<div class="w3-display-container mySlides">
-  <img src="images/android_dev_bg1.png" style="width:100%">
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    Android Developer
+<!-- Navigation -->
+<header class="nav" id="navbar">
+  <div class="container nav-inner">
+    <div class="brand">Aakash<span>.</span>Shah</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
-</div>
+</header>
 
-<div class="w3-display-container mySlides">
-  <img src="images/unity_dev.jpg" style="width:100%">
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    Game Developer(Unity)
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <p class="greeting">Hi, my name is</p>
+    <h1>Aakash Shah.</h1>
+    <p class="role">I build resilient systems at scale.</p>
+    <p class="tagline">
+      Software Engineer 2 at <strong style="color:var(--text)">Microsoft</strong> with 8+ years of experience
+      across fintech and commerce. I design and ship reliable, large-scale distributed backends and full-stack
+      applications &mdash; and I love diving into unfamiliar domains to solve hard problems.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View my work</a>
+      <a href="#contact" class="btn btn-ghost"><i class="fa-regular fa-envelope"></i> Get in touch</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/aakashshah94" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/aakash-shah-12b4a1ab" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:Aakash.shah94@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="w3-display-container mySlides">
-  <img src="images/web_dev.jpg" style="width:100%">
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    Web Developer
+<!-- About -->
+<section id="about" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">01. About</span>
+      <h2>A bit about me</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>
+          I&rsquo;m a Computer Science professional with a master&rsquo;s degree and a genuine love for continuous
+          learning. Over the past 8 years I&rsquo;ve worked at companies like <strong>Microsoft</strong> and
+          <strong>Goldman Sachs</strong>, building software across the gaming/commerce and fintech sectors.
+        </p>
+        <p>
+          I thrive in small, high-ownership teams &mdash; typically 3 to 10 engineers &mdash; where I&rsquo;ve
+          consistently taken on ambiguous problems and delivered. Whether it&rsquo;s hardening a database against
+          regional failures, delivering a new search experience, or building automated communication systems from
+          scratch, I&rsquo;m at my best when tackling challenges in unfamiliar territory.
+        </p>
+        <p>
+          My master&rsquo;s specialized in the <strong>Intelligent Systems</strong> track (AI, NLP, and ML), and I
+          stay hands-on by constantly building side projects &mdash; from subscription platforms and personal-finance
+          tools to mobile games and developer productivity apps.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="num accent-text">8+</div><div class="lbl">Years of experience</div></div>
+        <div class="fact"><div class="num accent-text">$1.5B+</div><div class="lbl">Revenue-impacting work</div></div>
+        <div class="fact"><div class="num accent-text">$42K</div><div class="lbl">Monthly savings identified</div></div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="w3-display-container mySlides">
-  <img src="images/soft_dev.jpg" style="width:100%">
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-   Software Developer
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">02. Skills</span>
+      <h2>Technologies I work with</h2>
+      <p>A full-stack toolkit spanning languages, cloud, data, and infrastructure &mdash; with a focus on Azure and distributed systems.</p>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <h4><i class="fa-solid fa-code"></i> Languages</h4>
+        <div class="tags">
+          <span class="tag">C#</span><span class="tag">Java</span><span class="tag">Python</span>
+          <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Dart</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4><i class="fa-solid fa-layer-group"></i> Frameworks</h4>
+        <div class="tags">
+          <span class="tag">.NET</span><span class="tag">ASP.NET Core</span><span class="tag">Spring Boot</span>
+          <span class="tag">React</span><span class="tag">Angular</span><span class="tag">React Native</span><span class="tag">Flutter</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4><i class="fa-solid fa-cloud"></i> Cloud &amp; DevOps</h4>
+        <div class="tags">
+          <span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span><span class="tag">Service Fabric</span><span class="tag">Terraform</span><span class="tag">Bicep</span><span class="tag">ARM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4><i class="fa-solid fa-database"></i> Data &amp; Storage</h4>
+        <div class="tags">
+          <span class="tag">SQL Server</span><span class="tag">Azure SQL</span><span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Cosmos DB</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4><i class="fa-solid fa-tower-broadcast"></i> Messaging &amp; Eventing</h4>
+        <div class="tags">
+          <span class="tag">Kafka</span><span class="tag">Service Bus</span><span class="tag">Event Hub</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4><i class="fa-solid fa-brain"></i> AI &amp; Search</h4>
+        <div class="tags">
+          <span class="tag">Azure AI Search</span><span class="tag">Vector Search</span><span class="tag">LLMs</span>
+          <span class="tag">NLP</span><span class="tag">Machine Learning</span>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="w3-display-container mySlides">
-  <img src="images/machine-learning.jpg" style="width:100%">
-  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-    Machine learning Scientist
+<!-- Experience -->
+<section id="experience" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">03. Experience</span>
+      <h2>Where I&rsquo;ve worked</h2>
+    </div>
+    <div class="timeline reveal">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="period">Oct 2021 &mdash; Present</div>
+        <h3><span class="company">Software Engineer 2</span> &middot; Microsoft</h3>
+        <div class="meta">Redmond, Washington</div>
+        <ul>
+          <li>Support the back-end services powering all Xbox storefronts &mdash; search, browse, and purchase &mdash; as well as services that deliver Windows updates to millions of machines.</li>
+          <li>Improved the resiliency of our Azure SQL database against regional data-center failures by setting up a <strong>geo-replicated failover group</strong> &mdash; which later prevented downtime during two region-wide Azure incidents.</li>
+          <li>Identified infrastructure and database-utilization optimizations that led to <strong>$42K/month in savings</strong>, and shared the findings with other teams to help them do the same.</li>
+          <li>Delivered the <strong>Universal Media Search</strong> functionality on time by aligning multiple stakeholders and clarifying ambiguous requirements.</li>
+          <li>Contributed to multiple projects with <strong>&gt;$1.5B revenue impact</strong>.</li>
+        </ul>
+        <div class="stack-line">C# · .NET · Python · React · SQL · Cosmos DB · Azure · Terraform · Service Bus · Event Hub · Docker · Service Fabric · Kubernetes · Azure AI &amp; Vector Search · LLMs</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="period">Mar 2019 &mdash; Oct 2021</div>
+        <h3><span class="company">Technology Associate</span> &middot; Goldman Sachs</h3>
+        <div class="meta">Richardson, Texas</div>
+        <ul>
+          <li>Worked on the <strong>Apple Card</strong> program, building automated agent-communication systems, and later similar inbound/outbound systems for savings and checking accounts.</li>
+          <li>Entrusted early in my career to complete and deliver an <strong>automated dialer project</strong> &mdash; navigating outdated vendor tech and gathering requirements directly from stakeholders in the absence of a PM.</li>
+          <li>Built an <strong>automated chatbot</strong> that routed customers by intent and account status, supporting a COVID-era customer-support program and handling massive inbound traffic without adding human agents.</li>
+        </ul>
+        <div class="stack-line">Java · Spring Boot · MongoDB · Python · JavaScript · React · TypeScript · REST APIs · AWS · Kafka · Docker · Kubernetes</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="period">Jul 2018 &mdash; Mar 2019</div>
+        <h3><span class="company">Quality Assurance Engineer</span> &middot; Federal Reserve Bank of Chicago</h3>
+        <div class="meta">Chicago, Illinois</div>
+        <ul>
+          <li>Wrote automated scripts to test UI and back-end services.</li>
+          <li>Handled testing for <strong>two teams simultaneously</strong> while also taking on development work and mentoring other developers &mdash; expanding well beyond the original QA-for-one-team scope.</li>
+        </ul>
+        <div class="stack-line">Selenium · Java · Apache · SQL · Jenkins · Git · AWS · JavaScript · Angular · TypeScript · Python</div>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>
 
-<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+<!-- Highlights -->
+<section id="highlights">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">04. Highlights</span>
+      <h2>Impact I&rsquo;m proud of</h2>
+    </div>
+    <div class="highlights reveal">
+      <div class="hl-card">
+        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h4>Resiliency, proven in production</h4>
+        <p>Designed a geo-replicated Azure SQL failover group that prevented downtime during two separate region-wide Azure outages &mdash; protecting the business from real monetary loss.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><i class="fa-solid fa-piggy-bank"></i></div>
+        <h4>$42K/month in savings</h4>
+        <p>Spotted infrastructure and database-utilization optimizations during a reliability project, delivering significant recurring cost savings and sharing the playbook across teams.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h4>Universal Media Search</h4>
+        <p>Delivered a new search experience across Xbox storefronts on time by turning ambiguous, multi-stakeholder requirements into a clear, shippable plan.</p>
+      </div>
+      <div class="hl-card">
+        <div class="icon"><i class="fa-solid fa-headset"></i></div>
+        <h4>Automation at scale under pressure</h4>
+        <p>Built automated dialer and chatbot systems at Goldman Sachs that absorbed a COVID-era surge in customer communications &mdash; no additional agent headcount required.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- Projects -->
+<section id="projects" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">05. Projects</span>
+      <h2>Things I build for fun</h2>
+      <p>Beyond work, I&rsquo;m always shipping side projects &mdash; a mix of in-progress private builds and open-source repositories on GitHub.</p>
+    </div>
+
+    <div class="proj-tabs reveal">
+      <button class="proj-tab active" data-filter="all">All</button>
+      <button class="proj-tab" data-filter="private">In progress</button>
+      <button class="proj-tab" data-filter="oss">Open source</button>
+    </div>
+
+    <div class="proj-grid reveal" id="projGrid">
+
+      <!-- Private / in-progress -->
+      <div class="proj-card" data-cat="private">
+        <div class="top"><span class="folder"><i class="fa-solid fa-cubes"></i></span><span class="badge badge-private">In progress</span></div>
+        <h4>SubaaS</h4>
+        <p>A multi-tenant Subscription-as-a-Service platform that lets providers sell and manage subscriptions &mdash; handling billing, entitlements, and access control end to end.</p>
+        <div class="stack"><span>.NET 10</span><span>C#</span><span>EF Core</span><span>PostgreSQL</span><span>React</span><span>.NET MAUI</span><span>Azure</span><span>Bicep</span></div>
+      </div>
+
+      <div class="proj-card" data-cat="private">
+        <div class="top"><span class="folder"><i class="fa-solid fa-wallet"></i></span><span class="badge badge-private">In progress</span></div>
+        <h4>Co-Spend Intelligence</h4>
+        <p>A household financial operating system that itemizes card charges and tracks shared-account spending, security alerts, logistics, net worth, and spending reports.</p>
+        <div class="stack"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Node/Express</span><span>Prisma</span><span>PostgreSQL</span><span>Plaid</span></div>
+      </div>
+
+      <div class="proj-card" data-cat="private">
+        <div class="top"><span class="folder"><i class="fa-solid fa-vault"></i></span><span class="badge badge-private">In progress</span></div>
+        <h4>Project Aethel</h4>
+        <p>A privacy-first digital estate &amp; legacy vault with zero-knowledge encryption, heartbeat monitoring, and automatic transfer of assets to designated legacy contacts.</p>
+        <div class="stack"><span>React/Vite</span><span>TypeScript</span><span>Azure Functions</span><span>Cosmos DB</span><span>Blob Storage</span><span>Bicep</span><span>MSAL</span></div>
+      </div>
+
+      <div class="proj-card" data-cat="private">
+        <div class="top"><span class="folder"><i class="fa-solid fa-gauge-high"></i></span><span class="badge badge-private">In progress</span></div>
+        <h4>Nexus</h4>
+        <p>A local-first Electron productivity dashboard that aggregates GitHub, email, Teams, browser, CLI, and AI context into one view &mdash; with a React Native companion app for phones.</p>
+        <div class="stack"><span>Electron</span><span>React</span><span>TypeScript</span><span>SQLite</span><span>Zustand</span><span>Ollama</span></div>
+      </div>
+
+      <div class="proj-card" data-cat="private">
+        <div class="top"><span class="folder"><i class="fa-solid fa-plane"></i></span><span class="badge badge-private">In progress</span></div>
+        <h4>TripManager</h4>
+        <p>A mobile trip-expense tracker with cash management, reports, import/export, and offline-first storage for travel on the go.</p>
+        <div class="stack"><span>Expo</span><span>React Native</span><span>TypeScript</span><span>AsyncStorage</span><span>Expo Router</span></div>
+      </div>
+
+      <div class="proj-card" data-cat="private">
+        <div class="top"><span class="folder"><i class="fa-solid fa-shapes"></i></span><span class="badge badge-private">In progress</span></div>
+        <h4>Orderly</h4>
+        <p>A minimalist puzzle game about bringing order to chaos through precise arrangement &mdash; playable on the web and packaged for mobile.</p>
+        <div class="stack"><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Capacitor</span></div>
+      </div>
+
+      <!-- Open source -->
+      <div class="proj-card" data-cat="oss">
+        <div class="top"><span class="folder"><i class="fa-brands fa-github"></i></span><span class="badge badge-oss">Open source</span></div>
+        <h4>Recipe Me</h4>
+        <p>A cross-platform mobile app for adding recipes, classifying them, and getting suggestions.</p>
+        <div class="stack"><span>Flutter</span><span>Dart</span></div>
+        <div class="links"><a href="https://github.com/aakashshah94/reciepe_me" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
+      </div>
+
+      <div class="proj-card" data-cat="oss">
+        <div class="top"><span class="folder"><i class="fa-brands fa-github"></i></span><span class="badge badge-oss">Open source</span></div>
+        <h4>Kudos App</h4>
+        <p>An enterprise peer-to-peer employee-recognition app with monthly points and gift-card redemptions.</p>
+        <div class="stack"><span>React</span><span>Fluent UI</span><span>Node/Express</span><span>Azure SQL</span></div>
+        <div class="links"><a href="https://github.com/aakashshah94/kudos-app" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
+      </div>
+
+      <div class="proj-card" data-cat="oss">
+        <div class="top"><span class="folder"><i class="fa-brands fa-github"></i></span><span class="badge badge-oss">Open source</span></div>
+        <h4>Gaming History Journey</h4>
+        <p>An AI-generated web experience built on top of an AI-driven research project into the history of gaming.</p>
+        <div class="stack"><span>HTML</span><span>AI-generated</span></div>
+        <div class="links"><a href="https://github.com/aakashshah94/gaming-history-journey" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
+      </div>
+
+      <div class="proj-card" data-cat="oss">
+        <div class="top"><span class="folder"><i class="fa-brands fa-github"></i></span><span class="badge badge-oss">Open source</span></div>
+        <h4>Movie Recommendation System</h4>
+        <p>A recommendation engine that suggests movies based on user preferences and similarity.</p>
+        <div class="stack"><span>Python</span><span>Machine Learning</span></div>
+        <div class="links"><a href="https://github.com/aakashshah94/Movie-Recommendation-System" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
+      </div>
+
+      <div class="proj-card" data-cat="oss">
+        <div class="top"><span class="folder"><i class="fa-brands fa-github"></i></span><span class="badge badge-oss">Open source</span></div>
+        <h4>FAQ Matching System</h4>
+        <p>An NLP system that matches user questions to the most relevant answers in a FAQ knowledge base.</p>
+        <div class="stack"><span>Python</span><span>NLP</span></div>
+        <div class="links"><a href="https://github.com/aakashshah94/Faq-matching-System" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
+      </div>
+
+      <div class="proj-card" data-cat="oss">
+        <div class="top"><span class="folder"><i class="fa-brands fa-github"></i></span><span class="badge badge-oss">Open source</span></div>
+        <h4>Brain Trainer</h4>
+        <p>An Android app with quick mental-math challenges designed to sharpen reflexes and arithmetic speed.</p>
+        <div class="stack"><span>Java</span><span>Android</span></div>
+        <div class="links"><a href="https://github.com/aakashshah94/Brain-Trainer-Android-App-" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
+      </div>
+
+    </div>
+
+    <p class="reveal" style="text-align:center; margin-top:36px; color:var(--muted);">
+      Explore more of my work on
+      <a href="https://github.com/aakashshah94?tab=repositories" target="_blank" rel="noopener">GitHub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.8em"></i></a>.
+    </p>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">06. Education</span>
+      <h2>Academic background</h2>
+    </div>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div class="period">Aug 2016 &mdash; May 2018</div>
+        <h4>M.S. in Computer Science</h4>
+        <p class="school">University of Texas at Dallas &middot; Richardson, TX</p>
+        <p class="school" style="margin-top:6px; font-size:.9rem;">Intelligent Systems &amp; Interactive Computing (AI, NLP, ML)</p>
+        <p class="gpa">GPA: 3.88 / 4.0</p>
+      </div>
+      <div class="edu-card">
+        <div class="period">Jun 2012 &mdash; May 2016</div>
+        <h4>B.E. in Computer Engineering</h4>
+        <p class="school">Gujarat Technological University &middot; Ahmedabad, India</p>
+        <p class="gpa">GPA: 8.48 / 10</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">07. Contact</span>
+      <h2>Let&rsquo;s connect</h2>
+      <p>Whether it&rsquo;s an interesting problem, a collaboration, or just a chat about distributed systems &mdash; my inbox is always open.</p>
+    </div>
+    <div class="contact-links reveal">
+      <a href="mailto:Aakash.shah94@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Email me</a>
+      <a href="https://www.linkedin.com/in/aakash-shah-12b4a1ab" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/aakashshah94" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Designed &amp; built by Aakash Shah &middot; &copy; <span id="year"></span></p>
+  </div>
+</footer>
 
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+  // Navbar scrolled state
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  });
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Project filter
+  const tabs = document.querySelectorAll('.proj-tab');
+  const cards = document.querySelectorAll('#projGrid .proj-card');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const f = tab.dataset.filter;
+    cards.forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
+    });
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
-
-	<div class="nav-agile">
-		<div class="container">
-			<!-- Navigation -->
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right margin-top cl-effect-2">
-							<li><a class="scroll2" href="index.html"><span data-hover="Home">Home</span></a></li>
-							<li><a class="scroll" href="#about"><span data-hover="About">About</span></a></li>
-							<li><a class="scroll" href="#skills"><span data-hover="Skills">Skills</span></a></li>
-							<li><a class="scroll" href="#experience"><span data-hover="Experience">Experience</span></a></li>
-							<li><a class="scroll" href="#portfolio"><span data-hover="Projects">Projects</span></a></li>
-							<li><a class="scroll" href="#contact"><span data-hover="Contact">Contact</span></a></li>
-						</ul>
-						<div class="clearfix"></div>
-					</div><!-- /.navbar-collapse -->
-					<div class="clearfix"></div>
-			</nav>
-		</div>
-	</div>
-	<!-- //Navigation -->
-<!-- //Header -->
-
-<!-- main-section-starts-here -->
-	<!-- About-starts-here -->
-	<div class="about" id="about">
-		<div class="container">
-			<h3 class="w3l_head">About Me</h3>
-			<div class="w3l-grids-about">
-				<div class="col-md-5 w3ls-ab-right">
-					<div class="agile-about-right-img">
-						<img src="images/ab.jpg" alt="">
-					</div>
-				</div>
-				<div class="col-md-7 w3ls-agile-left">
-					<div class="w3ls-agile-left-info">
-						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
-							<div class="icon-w3l">
-								<i class="hovicon effect-2 sub-a"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span></i>
-							</div>
-							<div class="text-w3l">
-								<h4>ANDROID DEVELOPER</h4>
-								<p>Full stack android developer. Can work on front as well as back end androi developer. Can work with server apis, data feetching,pagination, image loading. Have worked
-								with different APIs such as retrofit, firebase crash API, Firebase cloud messeging, restfull APIs using JSON data,google location API, recycler views and cardviews.
-							Complete lifecycle of android development. Starting from requirement gathering, preparing design layout to back end development, server interaction,
-						code cleaning and application publishing on google play.</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="w3ls-agile-left-info">
-						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
-							<div class="icon-w3l">
-								<i class="hovicon effect-2 sub-a"><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span></i>
-							</div>
-							<div class="text-w3l">
-								<h4>WEB DEVELOPER</h4>
-								<p>Full stack web developer. Able to develop front end as well as back end for webiste using PHP, mysql ,javascript , jquery , html5. API controller
-								for mobile. Development using lamp stack and yii framework.</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="w3ls-agile-left-info">
-						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
-							<div class="icon-w3l">
-								<i class="hovicon effect-2 sub-a"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></i>
-							</div>
-							<div class="text-w3l">
-								<h4>Machine Learning Scientist</h4>
-								<p></p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="w3ls-agile-left-info">
-						<div class="wel-left animated wow fadeInLeft" data-wow-delay=".5s">
-							<div class="icon-w3l">
-								<i class="hovicon effect-2 sub-a"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></i>
-							</div>
-							<div class="text-w3l">
-								<h4>GAME DEVELOPER</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //About-ends-here -->
-
-
-	<!--Skills-starts-here -->
-	<div class="wthreeskills" id="skills">
-		<div class="container-fluid">
-			<h3>MY SKILLS</h3>
-
-			<div class="wthreeskills-grids">
-				<div class="col-md-6 wthreeskills-grid wthreeskills-grid-2">
-					<h4>TECHNICAL SKILLS</h4>
-
-					<div class="bar_group">
-						<div class='bar_group__bar thin' label='PHP DESIGN' show_values='true' tooltip='true' value='75'></div>
-						<div class='bar_group__bar thin' label='CSS3' show_values='true' tooltip='true' value='82'></div>
-						<div class='bar_group__bar thin' label='HTML' show_values='true' tooltip='true' value='95'></div>
-						<div class='bar_group__bar thin' label='JAVA SCRIPT' show_values='true' tooltip='true' value='86'></div>
-						<div class='bar_group__bar thin' label='PHOTOSHOP' show_values='true' tooltip='true' value='76'></div>
-					</div>
-
-				</div>
-				<div class="col-md-6 wthreeskills-grid wthreeskills-grid-1">
-					<h4>PROFESSIONAL SKILLS</h4>
-
-					<!-- Tabs -->
-					<div class="tabs">
-						<div class="sap_tabs">
-							<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-								<ul class="resp-tabs-list">
-									<li class="resp-tab-item"><span>My Skill 1</span></li>
-									<li class="resp-tab-item"><span>My Skill 2</span></li>
-									<li class="resp-tab-item"><span>My Skill 3</span></li>
-								</ul>
-
-								<div class="resp-tabs-container">
-									<div class="tab-1 resp-tab-content">
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-										<div class="w3lsstatsaits-info">
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-1">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='9000' data-delay='.5' data-increment=4>7000</div>
-												<p>Lorem</p>
-											</div>
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-2">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='17000' data-delay='8' data-increment="1">16000</div>
-												<p>Ipsum</p>
-											</div>
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-3">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='12000' data-delay='.5' data-increment="11">12000</div>
-												<p>Dolores</p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="tab-2 resp-tab-content">
-										<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word.</p>
-										<div class="w3lsstatsaits-info">
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-1">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='9000' data-delay='.5' data-increment=4>16000</div>
-												<p>Sitamet</p>
-											</div>
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-2">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='17000' data-delay='8' data-increment="1">10000</div>
-												<p>Consect</p>
-											</div>
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-3">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='12000' data-delay='.5' data-increment="11">12000</div>
-												<p>Teturs</p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="tab-3 resp-tab-content">
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use.</p>
-										<div class="w3lsstatsaits-info">
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-1">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='9000' data-delay='.5' data-increment=4>8000</div>
-												<p>Adipisce</p>
-											</div>
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-2">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='17000' data-delay='8' data-increment="1">7000</div>
-												<p>Elitsed</p>
-											</div>
-											<div class="col-md-4 w3lsstatsaits-grid w3lsstatsaits-grid-3">
-												<div class="w3lsstatsaitsstats counter" data-slno='1' data-min='0' data-max='12000' data-delay='.5' data-increment="11">1400</div>
-												<p>Eiusmod</p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- //Tabs -->
-				</div>
-				<div class="clearfix"></div>
-			</div>
-
-		</div>
-	</div>
-	<!-- //Skills-ends-here -->
-
-	<!-- services-starts-here -->
-	<div class="services" id="service">
-		<div class="container">
-			<h3 class="agileits-title">MY INTERESTS</h3>
-			<div class="services-w3ls-row">
-				<div class="col-md-3 services-grids">
-					<div class="w3agile-servs-img">
-						<div class="icon-holder">
-							<span class="glyphicon glyphicon-queen" aria-hidden="true"></span>
-						</div>
-						<h4 class="mission">Sports </h4>
-						<p class="description">Scelerisque Praesent</p>
-					</div>
-				</div>
-				<div class="col-md-3 services-grids">
-					<div class="w3agile-servs-img">
-						<div class="icon-holder">
-							<span class="fa fa-gears icon" aria-hidden="true"></span>
-						</div>
-						<h4 class="mission">Article</h4>
-						<p class="description">Scelerisque Praesent</p>
-					</div>
-				</div>
-				<div class="col-md-3 services-grids">
-					<div class="w3agile-servs-img">
-						<div class="icon-holder">
-							<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-						</div>
-						<h4 class="mission">Web Design</h4>
-						<p class="description">Scelerisque Praesent</p>
-					</div>
-				</div>
-				<div class="col-md-3 services-grids">
-					<div class="w3agile-servs-img">
-						<div class="icon-holder">
-							<span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
-						</div>
-						<h4 class="mission">Music</h4>
-						<p class="description">Scelerisque Praesent</p>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //services-ends-here -->
-
-	<!-- Experience-starts-here -->
-	<div class="aitsresumewthree" id="experience">
-		<div class="container">
-			<div class="aitsresumewthree-tag">
-				<h3 class="title">MY EXPERIENCE</h3>
-			</div>
-			<div class="load_more">
-				<ul id="myList">
-					<li class="aitsaitsresumewthreeli-1">
-						<div class="l_g">
-							<div class="l_g_r g_r">
-								<div class="work">
-									<div class="work-info">
-										<div class="col-md-6 work-grid work-left">
-											<h4>2012 - 2016</h4>
-										</div>
-										<div class="col-md-6 work-grid work-right">
-											<h5>Company 3</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="work-info">
-										<div class="col-md-6 work-grid work-right work-right2">
-											<h4>2011 - 2012</h4>
-										</div>
-										<div class="col-md-6 work-grid work-left work-left2">
-											<h5>Company 2</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="work-info">
-										<div class="col-md-6 work-grid work-left">
-											<h4>2009 - 2011</h4>
-										</div>
-										<div class="col-md-6 work-grid work-right">
-											<h5 class="comp">Company 1</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="l_g">
-							<div class="l_g_r g_r">
-								<div class="work">
-									<h4 class="title title2">EDUCATION</h4>
-									<div class="work-info">
-										<div class="col-md-6 work-grid work-left">
-											<h4>2007-2009</h4>
-										</div>
-										<div class="col-md-6 work-grid work-right">
-											<h5 class="univ">Post Graduate</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="work-info">
-										<div class="col-md-6 work-grid work-right work-right2">
-											<h4>2003-2007</h4>
-										</div>
-										<div class="col-md-6 work-grid work-left work-left2">
-											<h5>Graduate</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="work-info">
-										<div class="col-md-6 work-grid work-left">
-											<h4>1994-2003</h4>
-										</div>
-										<div class="col-md-6 work-grid work-right">
-											<h5 class="sch">School</h5>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<div class="wow fadeInUp" id="loadMore">Show More <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-				<div class="wow fadeInDown" id="showLess">Show Less <i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-			</div>
-		</div>
-	</div>
-	<!-- //Experience-ends-here -->
-
-	<!-- Portfolio-starts-here -->
-	<div id="portfolio" class="portfolio">
-		<div class="container">
-			<h3 class="agile-title">My Projects</h3>
-			<div class="gallery_gds">
-				<div class="filtr-container">
-					<div class="col-md-3 filtr-item" data-category="1, 4" data-sort="Busy streets">
-						<div class="agileits-img">
-							<a href="images/g55.jpg" class="swipebox" title="My Project">
-								<img src="images/g5.jpg" alt="" class="img-responsive img-style row2" />
-							</a>
-						</div>
-						<div class="agileits-img">
-							<a href="images/g33.jpg" class="swipebox" title="My Project">
-								<img src="images/g3.jpg" alt="" class="img-responsive img-style row2" />
-							</a>
-						</div>
-					</div>
-					<div class="col-md-6 filtr-item" data-category="2, 3" data-sort="Luminous night">
-						<a href="images/g11.jpg" class="swipebox" title="My Project">
-							<img src="images/g1.jpg" alt="" class="img-responsive img-style row2" />
-						</a>
-						<div class="col-md-6 agileits-img g2">
-							<a href="images/g88.jpg" class="swipebox" title="My Project">
-								<img src="images/pro8.jpg" alt="" class="img-responsive img-style row2" />
-							</a>
-						</div>
-						<div class="col-md-6 agileits-img g4">
-							<a href="images/g77.jpg" class="swipebox" title="My Project">
-								<img src="images/pro6.jpg" alt="" class="img-responsive img-style row2" />
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-						<a href="images/g22.jpg" class="swipebox" title="My Project">
-							<img src="images/g2.jpg" alt="" class="img-responsive img-style row2" />
-						</a>
-					</div>
-					<div class="col-md-3 filtr-item" data-category="1, 4" data-sort="Busy streets">
-						<div class="agileits-img">
-							<a href="images/g44.jpg" class="swipebox" title="My Project">
-								<img src="images/g4.jpg" alt="" class="img-responsive img-style row2" />
-							</a>
-						</div>
-						<div class="agileits-img">
-							<a href="images/g66.jpg" class="swipebox" title="My Project">
-								<img src="images/g6.jpg" alt="" class="img-responsive img-style row2" />
-							</a>
-						</div>
-					</div>
-				   <div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Portfolio-ends-here -->
-
-	<!-- contact-starts-here -->
-	<div class="contact" id="contact">
-		<h3 class="agile-contact"> Contact Me</h3>
-		<div class="contact-agile">
-			<div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387142.84008838347!2d-74.25818880297903!3d40.705831640339994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1465278069158"> </iframe>
-			</div>
-			<div class="contact-left-agile">
-				<h4>About Me</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<div class="add-w3ls-main">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-					<div class="add-w3ls2">
-						<h5>Location</h5>
-						<p>738 Diamond Road, New York City</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="add-w3ls-main">
-						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-					<div class="add-w3ls2">
-						<h5>Email</h5>
-						<p><a href="mailto:info@example.com">mail@example.com</a></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="add-w3ls-main">
-						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-					<div class="add-w3ls2">
-						<h5>Call Me</h5>
-						<p>+12 5842 544 976</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="contact-right-w3l">
-				<div class="contact-form">
-					<form action="#" method="post">
-						<input placeholder="NAME" name="Name" type="text" required="" />
-						<input placeholder="LASTNAME" name="Name" type="text" required="" />
-						<input placeholder="E-MAIL" name="Email" type="email" required="" />
-						<textarea placeholder="TYPE YOUR MESSAGE......" required=""></textarea>
-						<input type="submit" value="Submit" name="login">
-					</form>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-	<!-- //contact-ends-here -->
-
-	<!-- copyright-starts-here -->
-	<div class="copy-section">
-		<div class="container">
-			<div class="footer-top">
-				<p>© 2017 Personal Resume. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-			</div>
-		</div>
-	</div>
-	<!-- copyright-ends-here -->
-	<!-- //main-section-ends-here -->
-
-
-	<!-- Custom-JavaScript-Files -->
-
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script> <!-- Default-JavaScript-File -->
-		<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
-
-		<!-- for-projects -->
-			<!-- swipe box js -->
-			<script src="js/jquery.swipebox.min.js"></script>
-			<script type="text/javascript">
-					jQuery(function($) {
-						$(".swipebox").swipebox();
-					});
-			</script>
-			<!-- //swipe box js -->
-
-			<script src="js/jquery.adipoli.min.js" type="text/javascript"></script>
-			<script type="text/javascript">
-				$(function(){
-					$('.row2').adipoli({
-						'startEffect' : 'overlay',
-						'hoverEffect' : 'sliceDown'
-					});
-				});
-
-			</script>
-		<!-- //for-projects -->
-
-		<!-- Horizontal-Tabs-JavaScript -->
-			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-			<script type="text/javascript">
-				$(document).ready(function () {
-					$('#horizontalTab').easyResponsiveTabs({
-						type: 'default',
-						width: 'auto',
-						fit: true,
-					});
-				});
-			</script>
-		<!-- Horizontal-Tabs-JavaScript -->
-
-		<!-- Stats-Number-Scroller-Animation-JavaScript -->
-			<script src="js/waypoints.min.js"></script>
-			<script src="js/counterup.min.js"></script>
-			<script>
-				jQuery(document).ready(function( $ ) {
-					$('.counter').counterUp({
-						delay: 10,
-						time: 1000,
-					});
-				});
-			</script>
-		<!-- //Stats-Number-Scroller-Animation-JavaScript -->
-
-		<!-- Progressive-Bars-JavaScript -->
-			<script src="js/bars.js"></script>
-		<!-- //Progressive-Bars-JavaScript -->
-
-		<!-- for-experience -->
-			<!-- Show-More-JavaScript -->
-			<script>
-				$(document).ready(function () {
-					size_li = $("#myList li").size();
-					x=1;
-					$('#myList li:lt('+x+')').show();
-					$('#loadMore').click(function () {
-						x= (x+1 <= size_li) ? x+1 : size_li;
-						$('#myList li:lt('+x+')').show();
-					});
-					$('#showLess').click(function () {
-						x=(x-1<0) ? 1 : x-1;
-						$('#myList li').not(':lt('+x+')').hide();
-					});
-				});
-			</script>
-			<!-- //Show-More-JavaScript -->
-		<!-- //for-experience -->
-
-		<!-- start-smoth-scrolling -->
-			<script type="text/javascript" src="js/move-top.js"></script>
-			<script type="text/javascript" src="js/easing.js"></script>
-			<script type="text/javascript">
-				jQuery(document).ready(function($) {
-					$(".scroll").click(function(event){
-						event.preventDefault();
-						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-					});
-				});
-			</script>
-		<!-- start-smoth-scrolling -->
-		<!-- here stars scrolling icon -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-				};
-			*/
-
-			$().UItoTop({ easingType: 'easeOutQuart' });
-
-			});
-	</script>
-<!-- //here ends scrolling icon -->
-
-
-<!-- //Custom-JavaScript-Files -->
 
 </body>
 </html>
